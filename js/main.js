@@ -18,7 +18,7 @@ createApp({
                     done: true
                 },
                 {
-                    text: 'Abdare a fare la spesa',
+                    text: 'Andare a fare la spesa',
                     done: true
                 },
                 {

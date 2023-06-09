@@ -14,29 +14,43 @@
         <div id="app">
             <div class="container mt-5">
                 <div class="row">
-                    <h1>Todo List</h1>
-                    <ul v-for="(task, index) in tasks" class="list-group">
-                        <li class="list-group-item d-flex justify-content-between">
-                            <h4>{{ task.text }}</h4>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="list-group">
-                        <div class="input-group input-group-md flex-nowrap">
-                            <input type="text" class="form-control" placeholder="Inserisci task">
-                            <button type="button" class="btn btn-success">
-                                <i class="fas fa-plus"></i>
-                                <span class="m-2">Aggiungi</span>
-                            </button>
+                    <div class="card bg-color">
+                        <div class="card-title m-3">
+                            <h1>Todo List</h1>
+                            <p>Gestisci i tuoi promemoria come meglio preferisci</p>
                         </div>
-                    </ul>
+                        
+                        <div class="card-body">
+                            <ul v-for="(task, index) in tasks" class="list-group">
+                                <li class="list-group-item d-flex justify-content-between mb-1">
+                                    <h5>{{ task.text }}</h5>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-warning">
+                                            <i class="fa-sharp fa-solid fa-file-pen"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="list-group mt-2">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Inserisci task">
+                                    </div>
+                                    <button type="button" class="btn btn-success">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Aggiungi</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
