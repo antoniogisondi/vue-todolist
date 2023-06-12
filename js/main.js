@@ -47,5 +47,25 @@ createApp({
                 },
             ]
         }
+    },
+
+    methods:{
+        taskDone(index){
+            this.tasks[index].done = !this.tasks[index].done
+        },
+
+        taskDelete(index){
+            this.tasks.splice(index, 1)
+        },
+
+        addTask(){
+            let new_task = {
+                text: this.txt,
+                done: false
+            }
+
+            this.tasks.push(new_task);
+            this.txt = ''
+        }
     }
 }).mount('#app')

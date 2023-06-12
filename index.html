@@ -23,15 +23,15 @@
                         <div class="card-body">
                             <ul v-for="(task, index) in tasks" class="list-group">
                                 <li class="list-group-item d-flex justify-content-between mb-1">
-                                    <h5>{{ task.text }}</h5>
+                                    <h5 :class="task.done ? '' : 'done-task'">{{ task.text }}</h5>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-primary">
-                                            <i class="fas fa-check"></i>
+                                        <button type="button" class="btn btn-primary" @click="taskDone(index)" :class="task.done ? 'btn-success' : 'btn-dark'">
+                                            <i class="fa-solid" :class="task.done ? 'fa-check' : 'fa-xmark'"></i>
                                         </button>
                                         <button type="button" class="btn btn-warning">
                                             <i class="fa-sharp fa-solid fa-file-pen"></i>
                                         </button>
-                                        <button type="button" class="btn btn-danger">
+                                        <button type="button" class="btn btn-danger" @click="taskDelete(index)">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </div>
@@ -41,9 +41,9 @@
                             <ul class="list-group mt-2">
                                 <li class="list-group-item d-flex justify-content-between">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Inserisci task">
+                                        <input type="text" class="form-control" placeholder="Inserisci task" v-model="txt" @keyup.enter="addTask()">
                                     </div>
-                                    <button type="button" class="btn btn-success">
+                                    <button type="button" class="btn btn-success" @click="addTask()">
                                         <i class="fas fa-plus"></i>
                                         <span>Aggiungi</span>
                                     </button>

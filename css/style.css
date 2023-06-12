@@ -11,3 +11,7 @@ body{
 .bg-color{
     background-color: cornflowerblue;
 }
+
+.done-task{
+    text-decoration: line-through;
+}
