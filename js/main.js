@@ -61,7 +61,7 @@ createApp({
         addTask(){
             let new_task = {
                 text: this.txt,
-                done: false
+                done: true
             }
 
             this.tasks.push(new_task);
